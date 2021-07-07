@@ -1090,82 +1090,82 @@
     } // Static
     ;
 
-    Carousel._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$2);
+//     Carousel._jQueryInterface = function _jQueryInterface(config) {
+//       return this.each(function () {
+//         var data = $(this).data(DATA_KEY$2);
 
-        var _config = _objectSpread2(_objectSpread2({}, Default), $(this).data());
+//         var _config = _objectSpread2(_objectSpread2({}, Default), $(this).data());
 
-        if (typeof config === 'object') {
-          _config = _objectSpread2(_objectSpread2({}, _config), config);
-        }
+//         if (typeof config === 'object') {
+//           _config = _objectSpread2(_objectSpread2({}, _config), config);
+//         }
 
-        var action = typeof config === 'string' ? config : _config.slide;
+//         var action = typeof config === 'string' ? config : _config.slide;
 
-        if (!data) {
-          data = new Carousel(this, _config);
-          $(this).data(DATA_KEY$2, data);
-        }
+//         if (!data) {
+//           data = new Carousel(this, _config);
+//           $(this).data(DATA_KEY$2, data);
+//         }
 
-        if (typeof config === 'number') {
-          data.to(config);
-        } else if (typeof action === 'string') {
-          if (typeof data[action] === 'undefined') {
-            throw new TypeError("No method named \"" + action + "\"");
-          }
+//         if (typeof config === 'number') {
+//           data.to(config);
+//         } else if (typeof action === 'string') {
+//           if (typeof data[action] === 'undefined') {
+//             throw new TypeError("No method named \"" + action + "\"");
+//           }
 
-          data[action]();
-        } else if (_config.interval && _config.ride) {
-          data.pause();
-          data.cycle();
-        }
-      });
-    };
+//           data[action]();
+//         } else if (_config.interval && _config.ride) {
+//           data.pause();
+//           data.cycle();
+//         }
+//       });
+//     };
 
-    Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
-      var selector = Util.getSelectorFromElement(this);
+//     Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
+//       var selector = Util.getSelectorFromElement(this);
 
-      if (!selector) {
-        return;
-      }
+//       if (!selector) {
+//         return;
+//       }
 
-      var target = $(selector)[0];
+//       var target = $(selector)[0];
 
-      if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
-        return;
-      }
+//       if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
+//         return;
+//       }
 
-      var config = _objectSpread2(_objectSpread2({}, $(target).data()), $(this).data());
+//       var config = _objectSpread2(_objectSpread2({}, $(target).data()), $(this).data());
 
-      var slideIndex = this.getAttribute('data-slide-to');
+//       var slideIndex = this.getAttribute('data-slide-to');
 
-      if (slideIndex) {
-        config.interval = false;
-      }
+//       if (slideIndex) {
+//         config.interval = false;
+//       }
 
-      Carousel._jQueryInterface.call($(target), config);
+//       Carousel._jQueryInterface.call($(target), config);
 
-      if (slideIndex) {
-        $(target).data(DATA_KEY$2).to(slideIndex);
-      }
+//       if (slideIndex) {
+//         $(target).data(DATA_KEY$2).to(slideIndex);
+//       }
 
-      event.preventDefault();
-    };
+//       event.preventDefault();
+//     };
 
-    _createClass(Carousel, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$2;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default;
-      }
-    }]);
+//     _createClass(Carousel, null, [{
+//       key: "VERSION",
+//       get: function get() {
+//         return VERSION$2;
+//       }
+//     }, {
+//       key: "Default",
+//       get: function get() {
+//         return Default;
+//       }
+//     }]);
 
-    return Carousel;
-  }();
+//     return Carousel;
+//   }();
   /**
    * ------------------------------------------------------------------------
    * Data Api implementation
